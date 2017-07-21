@@ -27,9 +27,9 @@ setInterval(function() {
     });
     req.write(
       JSON.stringify({
-        startNumber: i,
-        endNumber: 2,
-        name: "Yunseop"
+        from: 0,
+        to: 1,
+        money: 1
       })
     );
     req.end();
