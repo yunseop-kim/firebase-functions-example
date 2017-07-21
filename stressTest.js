@@ -27,8 +27,8 @@ setInterval(function() {
     });
     req.write(
       JSON.stringify({
-        from: 0,
-        to: 1,
+        from: 1,
+        to: 0,
         money: 1
       })
     );
@@ -37,4 +37,4 @@ setInterval(function() {
   } catch (error) {
     console.error(error);
   }
-}, 990);
+}, 100);

@@ -5,7 +5,7 @@ const functions = require("./functions")
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //  response.send("Hello from Firebase!");
 // });
-exports.helloWorld = functions.helloWorld;
+exports.createFunction = functions.createFunction;
 // exports.inputDivided = functions.inputDivided;
 // exports.editDivided = functions.editDivided;
 // exports.removeDivided = functions.removeDivided;

@@ -52,27 +52,12 @@ export let transactionTest = async (req: Request, res: Response) => {
   const { from, to, money } = req.body;
   let targetTo: any, targetFrom: any;
   const transactionRef: firebase.database.Reference = firebaseDB.ref("/nodes/bank");
-
-  // structure
-  // {
-  //   0 : {
-  //     history: {
-  //       hash1: {
-  //         money: 0,
-  //         sender: 1,
-  //         receiver: "-",
-  //         date: 23424245
-  //       }
-  //     },
-  //     total: 10000
-  //   }
-  // }
+  const fromRef: firebase.database.Reference = transactionRef.child(from);
+  const toRef: firebase.database.Reference = transactionRef.child(to);
 
   transactionRef.transaction(
     (currentObj: any) => {
       // If nodes/bank has never been set, values will be `null`.
-      console.log("test:", currentObj);
-
       if (currentObj === null) {
         console.log("there are no users.");
         return {
